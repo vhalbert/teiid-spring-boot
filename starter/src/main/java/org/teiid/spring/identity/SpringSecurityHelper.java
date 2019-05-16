@@ -53,13 +53,18 @@ public class SpringSecurityHelper implements SecurityHelper {
         securityContext.remove();
         SecurityContextHolder.getContext().setAuthentication(null);
     }
-
+/*
     @Override
     public TeiidSecurityContext getSecurityContext() {
         return securityContext.get();
     }
-
+*/
     @Override
+    public TeiidSecurityContext getSecurityContext(String context) {
+        return securityContext.get();
+    }
+
+ //   @Override
     public Subject getSubjectInContext(String securityDomain) {
         TeiidSecurityContext tsc = securityContext.get();
         if (tsc != null && tsc.getSecurityDomain().equals(securityDomain)) {
