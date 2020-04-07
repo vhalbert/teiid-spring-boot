@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
    Copyright (C) 2016 Red Hat, Inc.
 
@@ -20,7 +20,7 @@
   <parent>
     <groupId>org.teiid</groupId>
     <artifactId>teiid-spring-boot-starter-parent</artifactId>
-    <version>1.4.1.fuse-jdk11-800010</version>
+    <version>1.4.1.fuse-jdk11-800010-redhat-00002</version>
   </parent>
 
   <artifactId>teiid-spring-boot-common</artifactId>
