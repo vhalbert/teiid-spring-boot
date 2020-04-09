@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
    Copyright (C) 2016 Red Hat, Inc.
 
@@ -18,7 +19,7 @@
   <parent>
     <groupId>org.teiid</groupId>
     <artifactId>tools</artifactId>
-    <version>1.4.1.fuse-jdk11-800011</version>
+    <version>1.4.1.fuse-jdk11-800011-redhat-00001</version>
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
@@ -30,7 +31,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.version>3.6.0</maven.version>
-    <plexus.version>3.2.0</plexus.version>
+    <plexus.version>3.2.0.redhat-00001</plexus.version>
     <basepom.check.skip-duplicate-finder>true</basepom.check.skip-duplicate-finder>
     <basepom.check.skip-dependency-versions-check>true</basepom.check.skip-dependency-versions-check>    
   </properties>
