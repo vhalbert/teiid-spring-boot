@@ -25,7 +25,7 @@
 
   <groupId>org.teiid</groupId>
   <artifactId>teiid-spring-boot-starter-parent</artifactId>
-  <version>1.5.1.fuse-jdk11-100011</version>
+  <version>1.5.1.fuse-jdk11-100011-redhat-00001</version>
   <packaging>pom</packaging>
   <name>teiid-spring-boot-starter-parent</name>
   <url>http://teiid.org</url>
@@ -119,26 +119,26 @@
     <spring-boot.version>2.2.6.RELEASE</spring-boot.version>
     <spring.version>5.2.5.RELEASE</spring.version>
     <spring-social.version>1.1.6.RELEASE</spring-social.version>
-    <teiid.version>14.0.1.fuse-jdk11-100012</teiid.version>
+    <teiid.version>14.0.1.fuse-jdk11-100012-redhat-00001</teiid.version>
     <version.xml-apis>1.4.01</version.xml-apis>
     <ObjectStoreEnvironmentBean.objectStoreDir>${build.dir}</ObjectStoreEnvironmentBean.objectStoreDir>
-    <hibernate.version>5.4.12.Final</hibernate.version> <!-- Matching with OpenShift SB as it updates it -->
+    <hibernate.version>5.4.12.Final-redhat-00003</hibernate.version> <!-- Matching with OpenShift SB as it updates it -->
     <version.javax.jws-api>1.1</version.javax.jws-api>
     <version.org.mockito>1.10.19</version.org.mockito>
-    <version.org.keycloak>4.8.3.Final</version.org.keycloak>
+    <version.org.keycloak>4.8.3.Final-redhat-00001</version.org.keycloak>
     <olingo.version>4.7.1</olingo.version>
-    <narayana.version>2.1.0</narayana.version> <!-- me.snowdrop version, not narayana -->
+    <narayana.version>2.1.0.redhat-00002</narayana.version> <!-- me.snowdrop version, not narayana -->
     <version.springfox>2.9.2</version.springfox>
     <google-sheets.version>v4-rev574-1.24.1</google-sheets.version>
     <version.swagger-parser>1.0.44</version.swagger-parser>
     <version.io.swagger>1.5.22</version.io.swagger>
     <version.org.openapitools>4.0.0</version.org.openapitools>
-    <version.mustache>0.9.6</version.mustache>
+    <version.mustache>0.9.6.redhat-00001</version.mustache>
     <version.jackson-databind-nullable>0.1.0</version.jackson-databind-nullable>
     <version.jackson-core>2.11.0.rc1</version.jackson-core>
     <version.jackson-databind>2.11.0.rc1</version.jackson-databind>
     <version.org.mongodb>3.9.1</version.org.mongodb>
-    <version.org.dom4j.dom4j>2.1.3</version.org.dom4j.dom4j>
+    <version.org.dom4j.dom4j>2.1.3.redhat-00001</version.org.dom4j.dom4j>
   </properties>
 
   <build>
@@ -208,7 +208,21 @@
               <exclude>**/src/test/resources/**</exclude>
             </excludes>
           </configuration>
-        </plugin>      
+        </plugin>
+        <plugin>
+        <groupId>org.commonjava.maven.plugins</groupId>
+        <artifactId>project-sources-maven-plugin</artifactId>
+        <version>1.0</version>
+        <executions>
+          <execution>
+            <id>project-sources-archive</id>
+            <phase>initialize</phase>
+            <goals>
+              <goal>archive</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>      
     </plugins>
   </build>
 
@@ -222,12 +236,12 @@
       <dependency>
           <groupId>commons-codec</groupId>
           <artifactId>commons-codec</artifactId>
-          <version>1.13</version>
+          <version>1.13.0.redhat-00001</version>
       </dependency>
       <dependency>
           <groupId>antlr</groupId>
           <artifactId>antlr</artifactId>
-          <version>2.7.7</version>
+          <version>2.7.7.redhat-7</version>
       </dependency>
       <dependency>
           <groupId>jakarta.xml.bind</groupId>
@@ -237,7 +251,7 @@
       <dependency>
           <groupId>jakarta.persistence</groupId>
           <artifactId>jakarta.persistence-api</artifactId>
-          <version>2.2.3</version>
+          <version>2.2.3.redhat-00001</version>
       </dependency>
       <dependency>
           <groupId>org.ow2.asm</groupId>
@@ -528,8 +542,6 @@
         <groupId>org.teiid.connectors</groupId>
         <artifactId>mongodb-api</artifactId>
         <version>${teiid.version}</version>
-        <exclusions>
-        </exclusions>
       </dependency>
       <dependency>
         <groupId>org.teiid.connectors</groupId>
@@ -715,12 +727,12 @@
       <dependency>
         <groupId>org.teiid</groupId>
         <artifactId>teiid-spring-boot-common</artifactId>
-        <version>${project.version}</version>
+        <version>1.5.1.fuse-jdk11-100011-redhat-00001</version>
       </dependency>
       <dependency>
         <groupId>org.teiid</groupId>
         <artifactId>teiid-spring-boot-starter</artifactId>
-        <version>${project.version}</version>
+        <version>1.5.1.fuse-jdk11-100011-redhat-00001</version>
         <exclusions>
           <exclusion>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -731,107 +743,107 @@
       <dependency>
         <groupId>org.teiid</groupId>
         <artifactId>spring-odata</artifactId>
-        <version>${project.version}</version>
+        <version>1.5.1.fuse-jdk11-100011-redhat-00001</version>
       </dependency>
       <dependency>
         <groupId>org.teiid</groupId>
         <artifactId>spring-openapi</artifactId>
-        <version>${project.version}</version>
+        <version>1.5.1.fuse-jdk11-100011-redhat-00001</version>
       </dependency>
       <dependency>
         <groupId>org.teiid</groupId>
         <artifactId>vdb-codegen-plugin</artifactId>
-        <version>${project.version}</version>
+        <version>1.5.1.fuse-jdk11-100011-redhat-00001</version>
       </dependency>
       <dependency>
         <groupId>org.teiid</groupId>
         <artifactId>vdb-plugin</artifactId>
-        <version>${project.version}</version>
+        <version>1.5.1.fuse-jdk11-100011-redhat-00001</version>
       </dependency>      
       <dependency>
         <groupId>org.teiid</groupId>
         <artifactId>spring-keycloak</artifactId>
-        <version>${project.version}</version>
+        <version>1.5.1.fuse-jdk11-100011-redhat-00001</version>
       </dependency>
       <dependency>
         <groupId>org.teiid</groupId>
         <artifactId>spring-data-file</artifactId>
-        <version>${project.version}</version>
+        <version>1.5.1.fuse-jdk11-100011-redhat-00001</version>
       </dependency>      
       <dependency>
         <groupId>org.teiid</groupId>
         <artifactId>spring-data-rest</artifactId>
-        <version>${project.version}</version>
+        <version>1.5.1.fuse-jdk11-100011-redhat-00001</version>
       </dependency>
       <dependency>
         <groupId>org.teiid</groupId>
         <artifactId>spring-data-odata</artifactId>
-        <version>${project.version}</version>
+        <version>1.5.1.fuse-jdk11-100011-redhat-00001</version>
       </dependency>
       <dependency>
         <groupId>org.teiid</groupId>
         <artifactId>spring-data-odata4</artifactId>
-        <version>${project.version}</version>
+        <version>1.5.1.fuse-jdk11-100011-redhat-00001</version>
       </dependency>
       <dependency>
         <groupId>org.teiid</groupId>
         <artifactId>spring-data-sap-gateway</artifactId>
-        <version>${project.version}</version>
+        <version>1.5.1.fuse-jdk11-100011-redhat-00001</version>
       </dependency>      
       <dependency>
         <groupId>org.teiid</groupId>
         <artifactId>spring-data-soap</artifactId>
-        <version>${project.version}</version>
+        <version>1.5.1.fuse-jdk11-100011-redhat-00001</version>
       </dependency>
       <dependency>
         <groupId>org.teiid</groupId>
         <artifactId>spring-data-ftp</artifactId>
-        <version>${project.version}</version>
+        <version>1.5.1.fuse-jdk11-100011-redhat-00001</version>
       </dependency>      
       <dependency>
         <groupId>org.teiid</groupId>
         <artifactId>spring-data-mongodb</artifactId>
-        <version>${project.version}</version>
+        <version>1.5.1.fuse-jdk11-100011-redhat-00001</version>
       </dependency>
       <dependency>
         <groupId>org.teiid</groupId>
         <artifactId>spring-data-excel</artifactId>
-        <version>${project.version}</version>
+        <version>1.5.1.fuse-jdk11-100011-redhat-00001</version>
       </dependency>
       <dependency>
         <groupId>org.teiid</groupId>
         <artifactId>spring-data-salesforce</artifactId>
-        <version>${project.version}</version>
+        <version>1.5.1.fuse-jdk11-100011-redhat-00001</version>
       </dependency>
       <dependency>
         <groupId>org.teiid</groupId>
         <artifactId>spring-data-google-spreadsheet</artifactId>
-        <version>${project.version}</version>
+        <version>1.5.1.fuse-jdk11-100011-redhat-00001</version>
       </dependency>
       <dependency>
         <groupId>org.teiid</groupId>
         <artifactId>spring-data-infinispan-hotrod</artifactId>
-        <version>${project.version}</version>
+        <version>1.5.1.fuse-jdk11-100011-redhat-00001</version>
       </dependency>   
       <dependency>
           <groupId>org.teiid</groupId>
           <artifactId>spring-data-amazon-s3</artifactId>
-          <version>${project.version}</version>
+          <version>1.5.1.fuse-jdk11-100011-redhat-00001</version>
       </dependency>
       <dependency>
         <groupId>org.teiid</groupId>
         <artifactId>spring-data-openapi</artifactId>
-        <version>${project.version}</version>
+        <version>1.5.1.fuse-jdk11-100011-redhat-00001</version>
       </dependency>
       <dependency>
         <groupId>org.teiid</groupId>
         <artifactId>spring-data-cassandra</artifactId>
-        <version>${project.version}</version>
+        <version>1.5.1.fuse-jdk11-100011-redhat-00001</version>
       </dependency>
       <dependency>
         <groupId>org.teiid</groupId>
         <artifactId>vdb-tools-common</artifactId>
-        <version>${project.version}</version>
+        <version>1.5.1.fuse-jdk11-100011-redhat-00001</version>
       </dependency>       
       <dependency>
         <groupId>org.mockito</groupId>
@@ -867,58 +879,58 @@
       <dependency>
         <groupId>com.github.ben-manes.caffeine</groupId>
         <artifactId>caffeine</artifactId>
-        <version>2.8.0</version>
+        <version>2.8.0.redhat-00001</version>
       </dependency>
       <dependency>
           <groupId>io.netty</groupId>
           <artifactId>netty-all</artifactId>
-          <version>4.1.42.Final</version>
+          <version>4.1.42.Final-redhat-00001</version>
       </dependency>            
       <dependency>
           <groupId>io.netty</groupId>
           <artifactId>netty-buffer</artifactId>
-          <version>4.1.42.Final</version>
+          <version>4.1.42.Final-redhat-00001</version>
       </dependency>      
       <dependency>
           <groupId>io.netty</groupId>
           <artifactId>netty-codec</artifactId>
-          <version>4.1.48.Final</version>
+          <version>4.1.48.Final-redhat-00001</version>
       </dependency>
       <dependency>
           <groupId>io.netty</groupId>
           <artifactId>netty-common</artifactId>
-          <version>4.1.42.Final</version>
+          <version>4.1.42.Final-redhat-00001</version>
       </dependency>
       <dependency>
           <groupId>io.netty</groupId>
           <artifactId>netty-handler</artifactId>
-          <version>4.1.42.Final</version>
+          <version>4.1.42.Final-redhat-00001</version>
       </dependency>
       <dependency>
           <groupId>io.netty</groupId>
           <artifactId>netty-resolver</artifactId>
-          <version>4.1.42.Final</version>
+          <version>4.1.42.Final-redhat-00001</version>
       </dependency>
       <dependency>
           <groupId>io.netty</groupId>
           <artifactId>netty-transport</artifactId>
-          <version>4.1.42.Final</version>
+          <version>4.1.42.Final-redhat-00001</version>
       </dependency>
       <dependency>
           <groupId>io.netty</groupId>
           <artifactId>netty-transport-native-epoll</artifactId>
-          <version>4.1.42.Final</version>
+          <version>4.1.42.Final-redhat-00001</version>
       </dependency>
       <dependency>
           <groupId>io.netty</groupId>
           <artifactId>netty-transport-native-epoll</artifactId>
           <classifier>linux-x86_64</classifier>
-          <version>4.1.42.Final</version>
+          <version>4.1.42.Final-redhat-00001</version>
       </dependency>
       <dependency>
           <groupId>io.netty</groupId>
           <artifactId>netty-transport-native-unix-common</artifactId>
-          <version>4.1.42.Final</version>
+          <version>4.1.42.Final-redhat-00001</version>
       </dependency>
       <dependency>
           <groupId>org.infinispan</groupId>
@@ -1013,17 +1025,17 @@
       <dependency>
           <groupId>org.codehaus.woodstox</groupId>
           <artifactId>stax2-api</artifactId>
-          <version>4.2</version>
+          <version>4.2.0.redhat-00001</version>
       </dependency>
       <dependency>
         <groupId>org.jboss.logging</groupId>
         <artifactId>jboss-logging</artifactId>
-        <version>3.4.1.Final</version>
+        <version>3.4.1.Final-redhat-00001</version>
       </dependency>
       <dependency>
         <groupId>org.yaml</groupId>
         <artifactId>snakeyaml</artifactId>
-        <version>1.26</version>
+        <version>1.26.0.redhat-00001</version>
       </dependency>
       <dependency>
         <groupId>org.apache.httpcomponents</groupId>
@@ -1039,80 +1051,22 @@
       <dependency>
         <groupId>wsdl4j</groupId>
         <artifactId>wsdl4j</artifactId>
-        <version>1.6.3</version>
+        <version>1.6.3.redhat-2</version>
       </dependency>
       <dependency>
         <groupId>io.opentracing.contrib</groupId>
         <artifactId>opentracing-spring-jaeger-web-starter</artifactId>
-        <version>1.0.1</version>
+        <version>1.0.1.redhat-00002</version>
       </dependency>
       <dependency>
         <groupId>com.google.guava</groupId>
         <artifactId>guava</artifactId>
-        <version>20.0</version>
+        <version>20.0.0.redhat-1</version>
       </dependency>      
       <!-- DEPENDENCY RESOLUTION SUGGESTED OVERRIDES, OVERRIDES SPRING BOOT'S, ONLY EDIT WHEN SB UPGRADES -->
 
     </dependencies>
   </dependencyManagement>
-
-  <repositories>
-    <repository>
-      <id>central</id>
-      <name>Maven Central</name>
-      <url>https://repo.maven.apache.org/maven2/</url>
-      <snapshots>
-          <enabled>false</enabled>
-          <updatePolicy>never</updatePolicy>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>jboss-public-repository-group</id>
-      <name>JBoss Public Repository Group</name>
-      <url>https://repository.jboss.org/nexus/content/groups/public/</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>snapshots-repo</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>apache-snapshot-repository-group</id>
-      <url>https://repository.apache.org/content/groups/snapshots/</url>
-      <releases>
-        <enabled>false</enabled>
-        <updatePolicy>never</updatePolicy>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
-
-  <pluginRepositories>
-    <pluginRepository>
-      <id>jboss-public-repository-group</id>
-      <name>JBoss Public Repository Group</name>
-      <url>https://repository.jboss.org/nexus/content/groups/public/</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </pluginRepository>
-  </pluginRepositories>
 
   <profiles>
     <profile>
@@ -1203,3 +1157,7 @@
     </profile>
   </profiles>
 </project>
+<!--
+Modified by POM Manipulation Extension for Maven 3.8.3 ( SHA: 493ca742 ) 
+-->
+

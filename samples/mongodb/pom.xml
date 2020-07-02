@@ -19,12 +19,12 @@
   <parent>
     <groupId>org.teiid</groupId>
     <artifactId>samples</artifactId>
-    <version>1.5.1.fuse-jdk11-100011</version>
+    <version>1.5.1.fuse-jdk11-100011-redhat-00001</version>
   </parent>
 
   <artifactId>spring-mongodb-example</artifactId>
   <name>spring-mongodb-example</name>
-  <description>Demo project for Spring Boot show casing mongodb based </description>
+  <description>Demo project for Spring Boot show casing mongodb based</description>
   <packaging>jar</packaging>
 
   <dependencies>
